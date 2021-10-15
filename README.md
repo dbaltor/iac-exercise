@@ -1,7 +1,7 @@
 # IaC: Provisioning a nginx server
 
 This is a short exercise to get you used to provisioning infrastrucure using an IaC tool. We have chosen *Terraform* for this exercise but there are many other tools available out there.  
-The code is all in this README. However, all examples can be found in the [example](example) directory.
+The code is all in this README. However, all examples can be found in the [complete](complete) directory.
 
 ## Setup
 - Have Terraform installed on your local machine
