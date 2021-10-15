@@ -66,7 +66,7 @@ It is made up of:
     public_key_path = "./keys/nginx-aws-iac.pub"
     aws_region      = "eu-west-2"
     ```
-    The content above defines the SSH key name and the path to the SSH public key file, and the AWS region to be used. Possible options are:
+    The content above defines the SSH key name and the path to the SSH public key file, as well as the AWS region to be used. Possible options are:
     - eu-west-2
     - eu-west-1
     - us-east-1
@@ -82,13 +82,13 @@ It is made up of:
     ``` 
   
 1. We are now going to create a file named `main.tf` containing the code defining our whole new environment!  
-    The first section just declares the bare minimum Terraform version to be used:  
+    The first section just declares the bare minimum *Terraform* version to be used:  
     ```
     terraform {
         required_version = ">= 0.12"
     }
     ``` 
-    This section eclares the Terraform provider, AWS, and the region to be used:  
+    This section declares the *Terraform provider*,* AWS, and the region to be used:  
     ```
     provider "aws" {
         region = var.aws_region
@@ -124,7 +124,7 @@ It is made up of:
         map_public_ip_on_launch = true
     }
     ``` 
-    This section defines our security group:  
+    This section defines our security group and access rules:  
     ```
     # A security group for the ELB so it is accessible via the web
     resource "aws_security_group" "elb" {
@@ -198,7 +198,7 @@ It is made up of:
         }
     }
     ``` 
-    And finally our nginx server and its ssh keys:  
+    And finally our nginx server and its SSH keys:  
     ```
     resource "aws_key_pair" "auth" {
         key_name   = var.key_name
@@ -248,7 +248,7 @@ It is made up of:
   
 ## It's showtime!
   
-We are now going to provion our new environment.  
+We are now going to provision our new environment.  
   
 1. Make sure your console is open on the `nginx-aws` directory that we created during the *Setup* above
 1. Run the command `terraform init`  
